@@ -77,3 +77,28 @@
     border-radius: 10px;
     margin-top: 10px;
 }
+
+.sidebar__bottom > p {
+    text-align: center;
+    font-weight: 600;
+}
+
+.recent__item{
+     color: gray;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+}
+.recent__item__hash{
+    margin-left: 8px;
+}
+
+.recent__item:hover{
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: whitesmoke;
+}
