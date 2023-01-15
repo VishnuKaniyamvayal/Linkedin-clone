@@ -6,20 +6,21 @@ import "./Post.css"
 import MobileScreenShareIcon from '@mui/icons-material/MobileScreenShare';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import SendIcon from '@mui/icons-material/Send';
-
 const Post = ({name, description, message, photoUrl}) => {
-  return (
+  
+  
+    return (
     <div className='post'>
         <div className="post__header">
-            <Avatar/>
+            <Avatar src={photoUrl}>{name[0]}</Avatar>
             <div className="post__info">
-                <h2>Vishnu v</h2>
-                <p>description</p>
+                <h2>{name}</h2>
+                <p>{description}</p>
             </div>
 
         </div>
         <div className="post__body">
-            <p>message goes here</p>
+            <p>{message}</p>
         </div>
         <div className="post__buttons">
             <Inputoption Icon={ThumbUpOffAltIcon} title="like" color="gray"/>

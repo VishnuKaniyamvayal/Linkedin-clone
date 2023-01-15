@@ -7,8 +7,21 @@ import PeopleIcon from '@mui/icons-material/People';
 import WorkIcon from '@mui/icons-material/Work';
 import MessageIcon from '@mui/icons-material/Message';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import { useDispatch, useSelector } from 'react-redux';
+import { auth } from './firebase';
+import {logout, selectuser } from "./features/userSlice"
 
 const Header = () => {
+
+  const dispatch = useDispatch()
+
+  const user = useSelector(selectuser)
+
+  const logOutOfApp = ()=>{
+    dispatch(logout())
+    auth.signOut();
+  }
+
   return (
     <div className='header'>
 
@@ -26,7 +39,7 @@ const Header = () => {
           <Option title="jobs" Icon={WorkIcon}/>
           <Option title="messaging" Icon={MessageIcon}/>
           <Option title="notifications" Icon={NotificationsIcon}/>
-          <Option title="me" avatar="https://media.licdn.com/dms/image/D5635AQHgDtJUI3F4Xw/profile-framedphoto-shrink_400_400/0/1669873270820?e=1674118800&v=beta&t=Waw2va4-bJ6Qk5Ve05vo0gziDqm0SIMqerI-Pu6lyQw" />
+          <Option avatar={true} title="me"  onClick={logOutOfApp}/>
       </div>
     
     </div>

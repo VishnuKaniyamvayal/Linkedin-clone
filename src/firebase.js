@@ -1,4 +1,4 @@
-import {initializeApp} from "firebase/app"
+import firebase from "firebase"
 const firebaseConfig = {
     apiKey: "AIzaSyBm_h3_-PREdI43jNloU7W2d5jKpFWt2Jo",
     authDomain: "linkedin-clone-c2f74.firebaseapp.com",
@@ -9,4 +9,10 @@ const firebaseConfig = {
     measurementId: "G-999PZ7QBV5"
   };
 
-  const app = initializeApp(firebaseConfig)
+const app = firebase.initializeApp(firebaseConfig)
+const db = app.firestore()
+const auth = app.auth()
+
+
+export {db, auth}
+   
